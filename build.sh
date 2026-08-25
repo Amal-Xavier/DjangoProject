@@ -5,6 +5,7 @@ set -o errexit
 pip install -r requirements.txt
 python manage.py collectstatic --no-input
 python manage.py migrate
+python manage.py loaddata data.json
 
 # Automatically create a superuser if it doesn't already exist
 python manage.py shell << END
@@ -14,4 +15,3 @@ if not User.objects.filter(username='AmalXavier').exists():
     User.objects.create_superuser('AmalXavier', 'amalxavier41134@gmail.com', 'ypvp rfkn emrk ioee')
 END
 
-python manage.py loaddata data.json
