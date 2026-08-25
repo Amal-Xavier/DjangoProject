@@ -13,3 +13,5 @@ User = get_user_model()
 if not User.objects.filter(username='AmalXavier').exists():
     User.objects.create_superuser('AmalXavier', 'amalxavier41134@gmail.com', 'ypvp rfkn emrk ioee')
 END
+
+python manage.py loaddata data.json
